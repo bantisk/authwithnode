@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const verifytoken = require('../verifyToken');
 
-router.get('/', (req, res) => {
+router.get('/', verifytoken, (req, res) => {
     res.status(200).send({
         post: {
             title: 'First post',
